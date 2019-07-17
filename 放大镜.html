@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      #box{
+        width: 1000px;
+        height: 500px;
+        border: 1px solid black;
+        margin: 150px;
+      }
+      #min{
+          float: left;
+          width: 300px;
+          height: 300px;
+       
+         position: relative;
+      }
+
+    b{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        background: blue;
+        opacity: 0.5;
+        display: none;
+    }
+    #max{
+
+        float:right;
+        width:400px;
+        height: 400px;
+        overflow: hidden;
+        display: none;
+        position: relative;
+    }
+    #imgs{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="box" >   
+            <div id="min"><img src="imgs/min.jpg" alt=""><b></b></div>
+            <div id="max"><img src="imgs/max.jpg" alt="" id="imgs"></div>
+        
+    </div>
+    
+</body>
+<script>
+var min = document.getElementById("min"),
+    max = document.getElementById("max"),
+    b = document.getElementsByTagName("b")[0],
+    imgs = document.getElementById("imgs");
+min.onmousemove= function(e){
+    b.style.display = "block";
+    max.style.display = "block";
+    var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    var x= e.clientX-min.offsetLeft- b.offsetWidth/2;
+    var y = e.clientY-min.offsetTop - b.offsetHeight/2;
+
+
+    b.style.left =x+"px";
+    b.style.top =y+"px";
+
+
+    imgs.style.left = -2*x+"px";
+    imgs.style.top = -2*y+"px";
+
+}
+
+min.onmouseout = function(){
+
+b.style.display = "none";
+max.style.display = "none";
+}
+
+
+
+</script>
+</html>
