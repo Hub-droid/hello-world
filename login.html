@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/my.css">
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/login.js"></script>
+</head>
+<body>
+
+<div id="top_menu" >
+    <div class="contert">
+        <div>
+            <a href="index.html"><img class="logo my-logo" src="assets/images/login.png"/></a>
+        </div>
+        <div>
+            <ul id="menu">
+                <li data-menuanchor="page1"><a href="index.html">首页</a></li>
+                <li data-menuanchor="page3"><a href="">广告主</a></li>
+                <li data-menuanchor="page4"><a href="">网站主</a></li>
+                <li data-menuanchor=""><a href="login.html">登录</a></li>
+                <li data-menuanchor="" style="background:none"><a href="register_website.html">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="login_ndr">
+    <div class="login_ndr_1">
+        <h3>用户登录</h3>
+        <div>
+            <input name="username" id='username' type="text" value="" class="tc-input-text noborder"
+                   onFocus="if(value==defaultValue){value='';this.style.color='#333'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}"
+                   style="color:#999999"  placeholder="输入登录邮箱" >
+        </div>
+        <div>
+            <input name="password" id='password' type="password" value=""  placeholder="输入密码" >
+        </div>
+        <div>
+            <a href="#"  class="my-float">忘记密码</a>
+            <input name="remember" type="checkbox" id="remember" class="my-checkbox" onclick="ischecked()" >
+            <label for="remember" class="remember">记住我</label>
+        </div>
+        <a id="lead-cnt-next" href="javascript:;" class="login_ndr_1_a" onclick="SubmitForm()">登录</a>
+    </div>
+</div>
+</body>
+</html>
